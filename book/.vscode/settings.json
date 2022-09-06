@@ -44,5 +44,8 @@
     { "directory": "./book/10-end/app", "changeProcessCWD": true },
     { "directory": "./book/10-end/api", "changeProcessCWD": true },
     { "directory": "./book/10-end/lambda", "changeProcessCWD": true }
-  ]
+  ],
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "vscode.typescript-language-features"
+  }
 }
