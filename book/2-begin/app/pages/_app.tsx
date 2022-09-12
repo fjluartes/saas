@@ -18,7 +18,7 @@ class MyApp extends App {
     const { Component, pageProps } = this.props;
 
     return (
-      <ThemeProvider theme={true ? themeDark : themeLight}>
+      <ThemeProvider theme={false ? themeDark : themeLight}>
         <Head>
           <meta name="viewport" content="width device-width, initial-scale=1.0" />
         </Head>
