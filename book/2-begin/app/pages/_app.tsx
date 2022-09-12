@@ -8,6 +8,10 @@ import { themeDark, themeLight } from '../lib/theme';
 class MyApp extends App {
   public componentDidMount() {
     // Remove server-side injected CSS.
+    const jssStyles = document.querySelector('#jss-server-side');
+    if (jssStyles && jssStyles.parentNode) {
+      jssStyles.parentNode.removeChild(jssStyles);
+    }
   }
 
   public render() {
