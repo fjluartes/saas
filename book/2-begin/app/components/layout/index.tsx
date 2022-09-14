@@ -1,5 +1,9 @@
+import Avatar from '@material-ui/core/Avatar';
 import Grid from '@material-ui/core/Grid';
 import React from 'react';
+import MenuWithLinks from '../common/MenuWithLinks';
+// import Confirm from '../common/Confirm';
+import Notifier from '../common/Notifier';
 
 const styleGrid = {
   width: '100%',
@@ -9,6 +13,15 @@ const styleGrid = {
   display: 'flex',
   overflow: 'hidden',
 };
+
+// const styleGridIsMobile = {
+//   width: '100%',
+//   height: '100vh',
+//   maxWidth: '100%',
+//   padding: '0px 0px 0px 10px',
+//   display: 'flex',
+//   overflow: 'hidden',
+// };
 
 type Props = {
   firstGridItem?: boolean;
@@ -22,7 +35,13 @@ class Layout extends React.Component<Props> {
     const isThemeDark = false;
 
     return (
-      <Grid container direction="row" justify="flex-start" alignItems="stretch" style={styleGrid}>
+      <Grid
+        container
+        direction="row"
+        justify="flex-start"
+        alignItems="stretch"
+        style={styleGrid}
+      >
         {firstGridItem ? (
           <Grid
             item
@@ -64,16 +83,53 @@ class Layout extends React.Component<Props> {
                   />
                 </g>
               </svg>
-              <p>Clickable Avatar</p>
+              <MenuWithLinks
+                options={[
+                  {
+                    text: 'Index page',
+                    href: '/',
+                    highlighterSlug: '/',
+                  },
+                  {
+                    text: 'Your Settings',
+                    href: '/your-settings',
+                    highlighterSlug: '/your-settings',
+                  },
+                  {
+                    separator: true,
+                  },
+                  {
+                    text: 'Log out',
+                    href: '/logout',
+                  },
+                ]}
+              >
+                <Avatar
+                  src={'https://storage.googleapis.com/async-await/default-user.png'}
+                  alt="Add username here later in the book"
+                  style={{
+                    margin: '20px auto',
+                    cursor: 'pointer',
+                    display: 'inline-flex',
+                    width: '40px',
+                    height: '40px',
+                  }}
+                />
+                <i className="material-icons" color="action" style={{ verticalAlign: 'super' }}>
+                  arrow_drop_down
+                </i>
+              </MenuWithLinks>
             </div>
             <hr />
             <p />
             <p />
+            <Notifier />
           </Grid>
         ) : null}
         <Grid item sm={10} xs={12}>
           {children}
         </Grid>
+        {/* <Confirm /> */}
       </Grid>
     );
   }
