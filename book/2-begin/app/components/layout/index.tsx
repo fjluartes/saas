@@ -2,7 +2,7 @@ import Avatar from '@material-ui/core/Avatar';
 import Grid from '@material-ui/core/Grid';
 import React from 'react';
 import MenuWithLinks from '../common/MenuWithLinks';
-// import Confirm from '../common/Confirm';
+import Confirmer from '../common/Confirmer';
 import Notifier from '../common/Notifier';
 
 const styleGrid = {
@@ -14,25 +14,28 @@ const styleGrid = {
   overflow: 'hidden',
 };
 
-// const styleGridIsMobile = {
-//   width: '100%',
-//   height: '100vh',
-//   maxWidth: '100%',
-//   padding: '0px 0px 0px 10px',
-//   display: 'flex',
-//   overflow: 'hidden',
-// };
+const styleGridIsMobile = {
+  width: '100%',
+  height: '100vh',
+  maxWidth: '100%',
+  padding: '0px 0px 0px 10px',
+  display: 'flex',
+  overflow: 'hidden',
+};
 
 type Props = {
-  firstGridItem?: boolean;
   children: React.ReactNode;
+  firstGridItem?: boolean;
+  isMobile?: boolean;
 };
 
 class Layout extends React.Component<Props> {
   public render() {
-    const { firstGridItem, children } = this.props;
+    const { children, firstGridItem, isMobile } = this.props;
 
     const isThemeDark = false;
+
+    console.log(isMobile);
 
     return (
       <Grid
@@ -40,7 +43,7 @@ class Layout extends React.Component<Props> {
         direction="row"
         justify="flex-start"
         alignItems="stretch"
-        style={styleGrid}
+        style={isMobile ? styleGridIsMobile : styleGrid}
       >
         {firstGridItem ? (
           <Grid
@@ -126,10 +129,11 @@ class Layout extends React.Component<Props> {
           </Grid>
         ) : null}
         <Grid item sm={10} xs={12}>
+          {isMobile ? <hr /> : null}
           {children}
         </Grid>
         <Notifier />
-        {/* <Confirm /> */}
+        <Confirmer />
       </Grid>
     );
   }
