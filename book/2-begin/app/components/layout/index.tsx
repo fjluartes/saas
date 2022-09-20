@@ -123,12 +123,12 @@ class Layout extends React.Component<Props> {
             <hr />
             <p />
             <p />
-            <Notifier />
           </Grid>
         ) : null}
         <Grid item sm={10} xs={12}>
           {children}
         </Grid>
+        <Notifier />
         {/* <Confirm /> */}
       </Grid>
     );

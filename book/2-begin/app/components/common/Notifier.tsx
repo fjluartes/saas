@@ -1,6 +1,8 @@
 import Snackbar from '@material-ui/core/Snackbar';
 import React from 'react';
 
+export let openSnackbarExternal;
+
 type State = {
   open: boolean;
   message: string;
@@ -9,6 +11,7 @@ type State = {
 class Notifier extends React.PureComponent<any, State> {
   constructor(props) {
     super(props);
+    openSnackbarExternal = this.openSnackbar;
 
     this.state = {
       open: false,
