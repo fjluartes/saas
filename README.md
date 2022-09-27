@@ -27,10 +27,10 @@ The open source project is located in the `saas` folder. If you purchased our bo
 
 Check out projects built with the help of this open source app. Feel free to add your own project by creating a pull request.
 
-- [Async](https://async-await.com/): Urgent vs non-urgent communication tool for small teams.
+- [Async](https://async-await.com/): Open source web app for team communication, separate urgent vs. non-urgent conversations.
 - [workinbiotech.com](https://workinbiotech.com): Work in biotech, job board for small and young biotech companies
 - [Retaino](https://retaino.com) by [Earl Lee](https://github.com/earllee): Save, annotate, review, and share great web content. Receive smart email digests to retain key information.
-- [Builder Book](https://github.com/async-labs/builderbook): Open source web app to publish documentation or books. Built with React, Material-UI, Next, Express, Mongoose, MongoDB.
+- [Builder Book](https://github.com/async-labs/builderbook): Open source web app to publish documentation or books.
 
 
 ## Contents
@@ -47,7 +47,7 @@ Check out projects built with the help of this open source app. Feel free to add
 
 ## Features
 
-- Server-side rendering for [fast initial load and SEO](https://async-await.com/article/server-side-vs-client-side-rendering-in-react-apps).
+- Server-side rendering for fast initial load and SEO.
 - User authentication with Google OAuth API and Passwordless, cookie, and session.
 - Production-ready Express server with compression, parser, and helmet.
 - Transactional emails (`AWS SES`): welcome, team invitation, and payment.
@@ -69,7 +69,6 @@ Check out projects built with the help of this open source app. Feel free to add
 - Production-ready, scalable architecture:
   - `app` - user-facing web app with Next/Express server, responsible for rendering pages (either client-side or server-side rendered). `app` sends requests via API methods to `api` Express server.
   - `api` - server-only code, Express server, responsible for processing requests for internal and external API infrastructures.
-  - we prepared both apps for easy deployment to `now` by vercel.
 - **Subscriptions with `Stripe`**:
   - subscribe/unsubscribe Team to plan,
   - update card information,
@@ -283,7 +282,7 @@ Want to support this project? Consider buying our [books](https://builderbook.or
 - [Kelly Burke](https://github.com/klyburke)
 - [Timur Zhiyentayev](https://github.com/tima101)
 
-You can contact us at team@builderbook.org
+You can contact us at team@async-labs.com.
 
 If you are interested in working with us, check out [Async Labs](https://async-labs.com/).
 
