@@ -3,6 +3,7 @@ import { observer } from 'mobx-react';
 import Error from 'next/error';
 import Head from 'next/head';
 import Router from 'next/router';
+// import { NextPageContext } from 'next';
 import React from 'react';
 
 import LoginButton from '../components/common/LoginButton';
@@ -12,9 +13,7 @@ import { Team } from '../lib/store/team';
 import { Store } from '../lib/store';
 import withAuth from '../lib/withAuth';
 
-type Props = { store: Store; team: Team; token: string };
-
-class InvitationPageComp extends React.Component<Props> {
+class InvitationPageComp extends React.Component<{ store: Store; team: Team; token: string }> {
   public static async getInitialProps(ctx) {
     const { token } = ctx.query;
     if (!token) {
@@ -86,5 +85,24 @@ class InvitationPageComp extends React.Component<Props> {
     }
   }
 }
+
+// export async function getServerSideProps(context: NextPageContext) {
+//   const { token } = context.query;
+
+//   try {
+//     const { team } = await getTeamByTokenApiMethod(token as string, context.req);
+
+//     if (team && token) {
+//       return { props: { team, token } };
+//     } else {
+//       return { props: {} };
+//     }
+//   } catch (error) {
+//     console.log(error);
+//     return { props: {} };
+//   }
+// }
+
+// see our explanation for not using getServerSideProps at this time: https://github.com/async-labs/saas/issues/193
 
 export default withAuth(observer(InvitationPageComp), { loginRequired: false });

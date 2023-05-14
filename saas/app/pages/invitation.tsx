@@ -103,4 +103,23 @@ InvitationPageComp.getInitialProps = async (ctx: NextPageContext) => {
   }
 };
 
+// export async function getServerSideProps(context: NextPageContext) {
+//   const { token } = context.query;
+
+//   try {
+//     const { team } = await getTeamByTokenApiMethod(token as string, context.req);
+
+//     if (team && token) {
+//       return { props: { team, token } };
+//     } else {
+//       return { props: {} };
+//     }
+//   } catch (error) {
+//     console.log(error);
+//     return { props: {} };
+//   }
+// }
+
+// see our explanation for not using getServerSideProps at this time: https://github.com/async-labs/saas/issues/193
+
 export default withAuth(observer(InvitationPageComp), { loginRequired: false });
