@@ -39,7 +39,7 @@ class MenuWithLinks extends React.PureComponent<Props, State> {
           aria-controls={anchorEl ? 'simple-menu' : null}
           aria-haspopup="true"
           onClick={this.handleClick}
-          onKeyPress={this.handleClick}
+          onKeyDown={this.handleClick}
         >
           {children}
         </div>
