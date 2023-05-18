@@ -47,7 +47,7 @@ class Index extends React.Component {
               })
             }
           >
-            Test Confirmer/Notifier
+            Test Confirmer and Notifier
           </Button>
         </div>
       </Layout>

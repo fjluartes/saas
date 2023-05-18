@@ -11,7 +11,7 @@ class MyApp extends App<{ isMobile: boolean }> {
     const pageProps = { isMobile: isMobile({ req: ctx.req }), firstGridItem: true };
 
     if (Component.getInitialProps) {
-      Object.assign(pageProps, await Component.getIniitalProps(ctx));
+      Object.assign(pageProps, await Component.getInitialProps(ctx));
     }
 
     console.log(pageProps);
