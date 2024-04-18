@@ -22,7 +22,7 @@ class MyDocument extends Document {
   };
 
   public render() {
-    console.log('rendered on the server');
+    console.log(process.env.NEXT_PUBLIC_URL_APP);
     return (
       <Html lang="en">
         <Head>
