@@ -1,4 +1,5 @@
 .env
+.next
 node_modules
 yarn-error.log
 production-server/
