@@ -4,7 +4,7 @@ import React from 'react';
 class MyDocument extends Document {
   public render() {
     return (
-      <Html>
+      <Html lang="en">
         <Head>
           <meta charSet="utf-8" />
           <meta name="google" content="notranslate" />
